@@ -16,6 +16,9 @@
         body{
             background-color: blanchedalmond;
             opacity: 1.2;
+            text-align: center;
+            font-size: 65px;
+
         }
         .style{
             width: 200px;
@@ -23,11 +26,12 @@
             background-color: bisque;
             border: 1px solid black;
             padding: 10px;
-            
-            
         }
 
-        .error{
+        #problem{
+            text-align: center;
+        }
+        .incorrect{
             color:red;
         }
     </style>
@@ -49,20 +53,20 @@
                 num1: 30,
                 num2: 1,
                 response: "",
-                incorrect: false
+                incorrect: false,
+                score: 0
             };
         }
         render() {
             return (
-
             <div>
-                 <div id="problem" className="style">
+                 <div id="problem" className={this.state.incorrect ? "incorrect" : ""}>
                     <h1> {this.state.num1} + {this.state.num2} </h1>                    
                  </div>
 
                  <input value={this.state.response} placeholder="Enter result" className="style" onChange={this.updateResponse} onKeyPress={this.inputKeyPress}/>
 
-                 <h2> Response is : {this.state.response} </h2>
+                 <h2> Response is : {this.state.response} and you scored : {this.state.score} </h2>
 
             </div>     
             );
@@ -76,13 +80,16 @@
                  
                  const answer = parseInt(this.state.response);
 
+
                  if (answer === (this.state.num1 + this.state.num2)) {
 
                     this.setState({
 
                        num1: Math.ceil(Math.random() * 10),
                        num2: Math.ceil(Math.random() * 10),
-                       response: ""
+                       response: "",
+                       incorrect: false,
+                       score: this.state.score + 1
                     })
                      
                    alert("You win");
@@ -91,7 +98,8 @@
                    
                  this.setState({
                  
-                    response: ""                  
+                    response: "",
+                    incorrect: true                
                 })
                 alert("Wrong");
                      
