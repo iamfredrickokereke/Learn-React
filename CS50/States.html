@@ -43,6 +43,8 @@
     <div id="App" />
 
 
+
+
     <script type="text/babel">
     
     class Hello extends React.Component{
@@ -112,7 +114,13 @@
          }
     }
 
-    ReactDOM.render(<Hello />, document.querySelector("#App"));
+    ReactDOM.render(
+        
+                    <div>
+                        <Hello />
+                        <Hello />
+                        
+                    </div>, document.querySelector("#App"));
     
     </script>
 </body>
