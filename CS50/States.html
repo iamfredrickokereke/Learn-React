@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+    <style>
+        .style{
+            width: 200px;
+            height: 70px;
+        }
+    </style>
+
+    <title>CS50 React Basics</title>
+</head>
+<body>
+
+    <div id="App" />
+
+
+    <script type="text/babel">
+    
+    class Hello extends React.Component{
+
+        constructor(props){
+            super(props);
+            this.state = {
+                num1: 30,
+                num2: 1,
+                response: ""
+            };
+        }
+        render() {
+            return (
+                 <div id="problem">
+                    <h1> {this.state.num1} + {this.state.num2} </h1>
+                     <input value={this.state.response} placeholder="Enter result" className="style" onChange={this.updateResponse} onKeyPress={this.inputKeyPress}/>
+
+                     <h2> Response is : {this.state.response} </h2>
+                 </div>
+            );
+        }
+
+         updateResponse = (e) => this.setState({ response : e.target.value})
+
+         inputKeyPress = (e) => {
+
+             if (e.key === "Enter") {
+                 
+                 const answer = parseInt(this.state.response);
+
+                 if (answer === (this.state.num1 + this.state.num2)) {
+
+                  // alert("You win");
+
+                   this.setState({
+
+                       num1: Math.ceil(Math.random() * 10),
+                       num2: Math.ceil(Math.random() * 10)
+                   })
+                     
+                    
+                 } else{
+                    // alert("Wrong");
+                   
+                //    this.setState({
+
+                //        num1: Math.ceil(Math.random() * 10),
+                //        num2: Math.ceil(Math.random() * 10)
+                //    })
+                     
+                 }
+
+                 //answer = this.state.num1 + this.state.num2;
+             }
+
+            // alert("Hit Enter Key");
+         }
+    }
+
+    ReactDOM.render(<Hello />, document.querySelector("#App"));
+    
+    </script>
+</body>
+</html>

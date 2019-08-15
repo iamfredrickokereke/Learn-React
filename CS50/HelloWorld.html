@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+    <title>CS50 React Basics</title>
+</head>
+<body>
+
+    <div id="App" />
+
+
+    <script type="text/babel">
+    
+    class Hello extends React.Component{
+        render() {
+            return (
+                 <div>
+                     <h1>  Hello React </h1>
+                 </div>
+            );
+        }
+    }
+
+    ReactDOM.render(<Hello />, document.querySelector("#App"));
+    
+    </script>
+</body>
+</html>
