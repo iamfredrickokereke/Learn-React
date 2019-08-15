@@ -6,12 +6,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 
     <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         .style{
             width: 200px;
             height: 70px;
             background-color: bisque;
             border: 1px solid black;
-            padding: 10px;
+            
         }
     </style>
 
@@ -39,7 +45,7 @@
             return (
                  <div id="problem" className="style">
                     <h1> {this.state.num1} + {this.state.num2} </h1>
-                     <input value={this.state.response} placeholder="Enter result" className="style" onChange={this.updateResponse} onKeyPress={this.inputKeyPress}/>
+                    <input value={this.state.response} placeholder="Enter result" className="style" onChange={this.updateResponse} onKeyPress={this.inputKeyPress}/>
 
                      <h2> Response is : {this.state.response} </h2>
                  </div>
