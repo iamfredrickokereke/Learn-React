@@ -5,7 +5,7 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 
-    <style>
+    <style>   
 
         *{
             box-sizing: border-box;
@@ -39,11 +39,7 @@
     <title>CS50 React Basics</title>
 </head>
 <body>
-
     <div id="App" />
-
-
-
 
     <script type="text/babel">
     
@@ -59,7 +55,15 @@
                 score: 0
             };
         }
+
         render() {
+            if (this.state.score === 3) {
+               return this.renderWin();
+            } else{
+               return this.renderProblem();
+            }
+        }
+        renderProblem() {
             return (
             <div>
                  <div id="problem" className={this.state.incorrect ? "incorrect" : ""}>
@@ -83,7 +87,7 @@
                  const answer = parseInt(this.state.response);
 
 
-                 if (answer === (this.state.num1 + this.state.num2)) {
+                if (answer === (this.state.num1 + this.state.num2)) {
 
                     this.setState({
 
@@ -94,31 +98,35 @@
                        score: this.state.score + 1
                     })
                      
-                   alert("You win");
+                  // alert("You win");
                     
-                 } else{                   
+                } else{                   
                    
                  this.setState({
                  
                     response: "",
                     incorrect: true                
                 })
-                alert("Wrong");
+               // alert("Wrong");
                      
-                 }
+                }
 
                  //answer = this.state.num1 + this.state.num2;
-             }
+            }
 
-            // alert("Hit Enter Key");
-         }
+        }
+
+
+        renderWin(){
+            return <div> You Win </div>
+        }
     }
 
     ReactDOM.render(
         
                     <div>
                         <Hello />
-                        <Hello />
+                        
                         
                     </div>, document.querySelector("#App"));
     
