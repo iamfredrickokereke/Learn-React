@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title> React App</title>
+</head>
+<body>
+    <div id="app">hi</div>
+    <script>
+
+        const content1 = '<h1> Tag'
+        const content2 = '<Span> Tag'
+
+    
+       
+       function header(props) {
+           return React.createElement(
+            'h1',
+            {id:'bold'}, 
+            props.content1
+           )
+       }
+
+       function span(props) {
+           return React.createElement(
+            'span', 
+            {className: 'color'},
+            props.content2
+           )
+       }
+
+
+        
+        //create a map both element in a div
+
+        const divElement = React.createElement(
+            'div',
+            {id : 'container'},
+            header({content1}),
+            span({content2})
+            // React.createElement(header, {content1}), 
+            // React.createElement(span, {content2}),
+            // React.createElement(header, {content1: 'emma'})
+            
+        )
+
+        // Render new react node elements to DOM
+
+        ReactDOM.render(
+            divElement,
+            document.getElementById('app')
+        )
+
+
+        // difference between react component and react element
+
+        // React component is a function or class which optionally receives input 
+        // and returns a react element.
+
+
+    </script>
+</body>
+</html>
