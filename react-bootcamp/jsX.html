@@ -17,11 +17,11 @@
 
     
        
-       function header(props) {
+       function header() {
            return <h1> i am a heading </h1>
        }
 
-       function span(props) {
+       function span() {
            return <span> my span tag </span>
        }
 
@@ -29,21 +29,19 @@
         
         //create a map both element in a div
 
-        const divElement = React.createElement(
-            'div',
-            {id : 'container'},
-            header({content1}),
-            span({content2})
-            // React.createElement(header, {content1}), 
-            // React.createElement(span, {content2}),
-            // React.createElement(header, {content1: 'emma'})
-            
-        )
+        Appwrapper () => {
+            return(
+                <div>
+                    <header />
+                    <span />
+                </div>    
+            )
+        } 
 
         // Render new react node elements to DOM
 
         ReactDOM.render(
-            divElement,
+            <Appwrapper>,
             document.getElementById('app')
         )
 
