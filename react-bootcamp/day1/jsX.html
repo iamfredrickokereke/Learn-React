@@ -4,7 +4,7 @@
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
-    <link rel="stylesheet" href="style.css">
+   
 
     <title> React App</title>
 </head>
@@ -13,37 +13,32 @@
     <script type="text/babel">
 
         const content1 = '<h1> Tag'
-        const content2 = '<Span> Tag'
+        const content2 = '<span> Tag'
 
     
        
-       function header() {
-           return <h1> i am a heading </h1>
-       }
+       function Header(props){ return <h1> i am a heading {props.content1} </h1>}
 
-       function span() {
-           return <span> my span tag </span>
+       function Span(props) {
+           return <span> my span tag {props.content2} </span>
        }
 
 
         
         //create a map both element in a div
 
-        Appwrapper () => {
-            return(
-                <div>
-                    <header />
-                    <span />
+        function Appwrapper () {
+            return (
+                <div id="container">
+                    <Header content1={content1} />
+                    <Span content2={content2} />
                 </div>    
             )
         } 
 
         // Render new react node elements to DOM
 
-        ReactDOM.render(
-            <Appwrapper>,
-            document.getElementById('app')
-        )
+        ReactDOM.render(<Appwrapper />, document.getElementById('app'))
 
 
         // difference between react component and react element
