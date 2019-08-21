@@ -4,11 +4,12 @@ class Product extends React.Component {
       super(props)
       this.buy = this.buy.bind(this);
       this.state = {
-        quantity: 0
+        quantity: 0,
+        isUp: true
       };
   
     }
-  
+   
     buy() {
       //alert("Thanks, you just bought it")
   
