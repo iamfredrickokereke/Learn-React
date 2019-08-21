@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!--React Library-->
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!--React DOM Library-->
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!--Babel Library-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
     <title>React Array</title>
 </head>
 <body>
-    <div id="app">
-        
-    </div>
 
+    <!--Root location container-->
+    <div id="app"></div>
+
+    <!--Script for React-->
     <script type="text/babel"> 
 
-    function Nonso(props){
-
-        return(
-
-            <div>
-            <h1> Hello World </h1>
-            <h2> my name is {this.props.name} </h2>
-            <h3> Today is {this.props.getDate} </h3>
-            </div>
-        )
-
-    }   
-
+  
+    //Render React to DOM with 2 Arguments - React -What and React-Where
     ReactDOM.render(
-        <Nonso name={"fred"} />, 
+        //React What
+        <h1>Code is sweet </h1>,
+        //React Where 
         document.querySelector('#app')
     )
     </script>
