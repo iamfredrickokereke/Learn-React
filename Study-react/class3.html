@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--React Library-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!--React DOM Library-->
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!--Babel Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <title>Refactoring react code</title>
+</head>
+<body>
+
+    <!--Root location container-->
+    <div id="app"></div>
+
+    <!--Script for React-->
+    <script type="text/babel"> 
+
+    var content = <div>
+            <h1>Code is sweet </h1>
+            <p> This is a paragraph </p>
+            <a href="https://www.google.com"> Click here to learn more </a>
+        </div>;
+
+   // var content2 = <h1> Hello, it works </h1>;
+
+
+    var destination = document.querySelector('#app');    
+  
+    //Render React to DOM with 2 Arguments - React -What and React-Where
+    ReactDOM.render(
+        //React What
+        content,
+        //React Where 
+        destination
+    )
+    </script>
+</body>
+</html>
