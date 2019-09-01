@@ -21,7 +21,7 @@
 
         // Code goes here
 
-    const Friendly = function(){
+    const Friendly = function(props){
     var friendStyle = {
         display:"inline-block",
         margin:20,
@@ -42,7 +42,7 @@
         <div style={friendStyle}>
         <h1> Friendly project</h1>
         <Avatar />
-        <Profile />
+        <Profile name={props.name}/>
         <GetConnected />
         </div>  
         )
@@ -59,13 +59,13 @@
         
     }
 
-    const Profile = function(){
+    const Profile = function(props){
         var profileStyle = {
             color:"#888",
             fontStye:"verdana"
         }
         
-        return <h1 style={profileStyle}>Avid Learner </h1>
+        return <h1 style={profileStyle}>{props.name} </h1>
     }
     const GetConnected = function(){
     var getConnectedStyle = {
@@ -102,18 +102,9 @@
 
     ReactDOM.render(
     <div>
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
-        <Friendly  />
+        <Friendly name="Avid Learner"  />
+        <Friendly name="Kelly Fredrick" />
+        
 
     </div>, 
     
