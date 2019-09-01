@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--React Library-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!--React DOM Library-->
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!--Babel Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" />
+    <title>Refactoring react code</title>
+</head>
+<body>
+
+    <!--Root location container-->
+    <div id="root">React has not rendered yet!</div>
+
+    <!--Script for React-->
+    <script type="text/babel"> 
+
+        // Code goes here
+
+    const Friendly = function(){
+    var friendStyle = {
+        width:"20%",
+        height: "30%",
+        color:"white",
+        padding:0,
+        border:"1",
+        margin:"0 auto",
+        textAlign:"center",
+        fontSize:"3vh",
+        backgroundColor:"green",
+        WebkitFilter:"drop-shadow(0px 0px 15px #000)",
+        filter:"drop-shadow(0px 0px 15px #000)"
+    }
+    
+    return(
+        <div style={friendStyle}>
+        <h1> Friendly project</h1>
+        <Avatar />
+        <Profile />
+        <GetConnected />
+        </div>  
+        )
+    }
+
+    const Avatar = function(){
+        var avatarStyle = {
+            width:"100%",
+            height:250,
+            borderRadius:"50%"
+        }
+        
+        return <img style={avatarStyle}src="https://res.cloudinary.com/iamfredrick/image/upload/v1526148249/iamfredrick.jpg" alt="profile pic" />
+        
+    }
+
+    const Profile = function(){
+        var profileStyle = {
+            color:"white",
+            fontStye:"verdana"
+        }
+        
+        return <h1 style={profileStyle}>Avid Learner </h1>
+    }
+    const GetConnected = function(){
+    var getConnectedStyle = {
+        
+    }
+    
+    return (
+        <div>
+            <Like />
+            <Share />
+            <Add />
+        </div>
+    )
+    }
+
+    var styles = {
+        
+        margin:25
+    }
+
+    //Like Component
+    const Like = function () {
+        return <i style={styles}className="far fa-thumbs-up"></i>
+    }
+    //share Component
+    const Share = function () {
+        return <i style={styles}className="fas fa-share-alt"></i>
+    }
+    //Add Component
+    const Add = function () {
+        return <i style={styles}className="fas fa-user-plus"></i>
+    }
+
+
+    ReactDOM.render(
+    <div>
+        <Friendly  />
+    </div>, 
+    
+    
+    document.getElementById("root"))
+    </script>
+</body>
+</html>
