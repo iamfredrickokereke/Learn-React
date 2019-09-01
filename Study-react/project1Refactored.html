@@ -19,97 +19,107 @@
     <!--Script for React-->
     <script type="text/babel"> 
 
-        // Code goes here
+            // Code goes here
 
-    const Friendly = function(props){
-    var friendStyle = {
-        display:"inline-block",
-        margin:20,
-        width:"200",
-        height: "300",
-        color:"#98ff12",
-        padding:10,
-        border:"1",
-        borderRadius:20,
-        textAlign:"center",
-        fontSize:"3vh",
-        backgroundColor:"#8d6647",
-        WebkitFilter:"drop-shadow(0px 0px 15px #000)",
-        filter:"drop-shadow(0px 0px 15px #000)"
-    }
-    
-    return(
-        <div style={friendStyle}>
-        <h1> Friendly project</h1>
-        <Avatar />
-        <Profile name={props.name}/>
-        <GetConnected />
-        </div>  
+        const Friendly = function(props){
+            var friendStyle = {
+                display:"inline-block",
+                margin:20,
+                width:"20%",
+                height: "30%",
+                color:"#98ff12",
+                padding:10,
+                border:"1",
+                borderRadius:20,
+                textAlign:"center",
+                fontSize:"3vh",
+                backgroundColor:"#8d6647",
+                WebkitFilter:"drop-shadow(0px 0px 15px #000)",
+                filter:"drop-shadow(0px 0px 15px #000)"
+            }
+            
+            return(
+                <div style={friendStyle}>
+                    <h1> Friendly project</h1>
+                    <Avatar img={props.img}/>
+                    <Profile name={props.name}/>
+                    <GetConnected />
+                </div>  
+                )
+        }
+
+        const Avatar = function(props){
+            var avatarStyle = {
+                width:"100%",
+                height:250,
+                borderRadius:"50%"
+            }
+            
+            return <img style={avatarStyle}src={props.img} alt="profile pic" />
+            
+        }
+
+        const Profile = function(props){
+            var profileStyle = {
+                color:"#888",
+                fontStye:"verdana"
+            }
+            
+            return <h1 style={profileStyle}>{props.name} </h1>
+        }
+        const GetConnected = function(){
+        var getConnectedStyle = {
+            
+        }
+        
+        return (
+            <div>
+                <Like />
+                <Share />
+                <Add />
+            </div>
         )
-    }
-
-    const Avatar = function(){
-        var avatarStyle = {
-            width:"100",
-            height:250,
-            borderRadius:"50%"
         }
-        
-        return <img style={avatarStyle}src="https://res.cloudinary.com/iamfredrick/image/upload/v1526148249/iamfredrick.jpg" alt="profile pic" />
-        
-    }
 
-    const Profile = function(props){
-        var profileStyle = {
-            color:"#888",
-            fontStye:"verdana"
+        var styles = {
+            
+            margin:25
         }
-        
-        return <h1 style={profileStyle}>{props.name} </h1>
-    }
-    const GetConnected = function(){
-    var getConnectedStyle = {
-        
-    }
-    
-    return (
+
+        //Like Component
+        const Like = function () {
+            return <i style={styles}className="far fa-thumbs-up"></i>
+        }
+        //share Component
+        const Share = function () {
+            return <i style={styles}className="fas fa-share-alt"></i>
+        }
+        //Add Component
+        const Add = function () {
+            return <i style={styles}className="fas fa-user-plus"></i>
+        }
+
+
+        ReactDOM.render(
         <div>
-            <Like />
-            <Share />
-            <Add />
-        </div>
-    )
-    }
+            <Friendly name="Avid Learner😎" img="https://res.cloudinary.com/iamfredrick/image/upload/v1526148249/iamfredrick.jpg"  />
+            <Friendly name="Kelly Fredrick" img="https://scontent.fbni1-1.fna.fbcdn.net/v/t31.0-8/12973071_1615732425346841_2913213624172076477_o.jpg?_nc_cat=107&_nc_eui2=AeHk62MtzLGISFn2JGWGVIvZLqjbIgq0z75tg9CQnJ1vlsTF5uOFcYAZCiyMF5nagT4LHOLEBiM7V7lOf8d4ZQTh4mOx753AUKUpKV6814fssw&_nc_oc=AQk4zp9tFlcnjg_o8bomCwXUJKHA6n69Lh7PG_i3gQfT7mMWeWWj6pYnsEvFkhAPcdQ&_nc_ht=scontent.fbni1-1.fna&oh=e73dd6d97e0eff5f9bc98a1684db6fe1&oe=5E0B9BB6" />
+            <Friendly name="Avid Learner😎" img="https://res.cloudinary.com/iamfredrick/image/upload/v1526148249/iamfredrick.jpg"  />
+            <Friendly name="Kelly Fredrick" img="https://scontent.fbni1-1.fna.fbcdn.net/v/t31.0-8/12973071_1615732425346841_2913213624172076477_o.jpg?_nc_cat=107&_nc_eui2=AeHk62MtzLGISFn2JGWGVIvZLqjbIgq0z75tg9CQnJ1vlsTF5uOFcYAZCiyMF5nagT4LHOLEBiM7V7lOf8d4ZQTh4mOx753AUKUpKV6814fssw&_nc_oc=AQk4zp9tFlcnjg_o8bomCwXUJKHA6n69Lh7PG_i3gQfT7mMWeWWj6pYnsEvFkhAPcdQ&_nc_ht=scontent.fbni1-1.fna&oh=e73dd6d97e0eff5f9bc98a1684db6fe1&oe=5E0B9BB6" />
+            <Friendly name="Avid Learner😎" img="https://res.cloudinary.com/iamfredrick/image/upload/v1526148249/iamfredrick.jpg"  />
+            <Friendly name="Kelly Fredrick" img="https://scontent.fbni1-1.fna.fbcdn.net/v/t31.0-8/12973071_1615732425346841_2913213624172076477_o.jpg?_nc_cat=107&_nc_eui2=AeHk62MtzLGISFn2JGWGVIvZLqjbIgq0z75tg9CQnJ1vlsTF5uOFcYAZCiyMF5nagT4LHOLEBiM7V7lOf8d4ZQTh4mOx753AUKUpKV6814fssw&_nc_oc=AQk4zp9tFlcnjg_o8bomCwXUJKHA6n69Lh7PG_i3gQfT7mMWeWWj6pYnsEvFkhAPcdQ&_nc_ht=scontent.fbni1-1.fna&oh=e73dd6d97e0eff5f9bc98a1684db6fe1&oe=5E0B9BB6" />
+            <Friendly name="Avid Learner😎" img="https://res.cloudinary.com/iamfredrick/image/upload/v1526148249/iamfredrick.jpg"  />
+            <Friendly name="Kelly Fredrick" img="https://scontent.fbni1-1.fna.fbcdn.net/v/t31.0-8/12973071_1615732425346841_2913213624172076477_o.jpg?_nc_cat=107&_nc_eui2=AeHk62MtzLGISFn2JGWGVIvZLqjbIgq0z75tg9CQnJ1vlsTF5uOFcYAZCiyMF5nagT4LHOLEBiM7V7lOf8d4ZQTh4mOx753AUKUpKV6814fssw&_nc_oc=AQk4zp9tFlcnjg_o8bomCwXUJKHA6n69Lh7PG_i3gQfT7mMWeWWj6pYnsEvFkhAPcdQ&_nc_ht=scontent.fbni1-1.fna&oh=e73dd6d97e0eff5f9bc98a1684db6fe1&oe=5E0B9BB6" />
+            <Friendly name="Avid Learner😎" img="https://res.cloudinary.com/iamfredrick/image/upload/v1526148249/iamfredrick.jpg"  />
+            <Friendly name="Kelly Fredrick" img="https://scontent.fbni1-1.fna.fbcdn.net/v/t31.0-8/12973071_1615732425346841_2913213624172076477_o.jpg?_nc_cat=107&_nc_eui2=AeHk62MtzLGISFn2JGWGVIvZLqjbIgq0z75tg9CQnJ1vlsTF5uOFcYAZCiyMF5nagT4LHOLEBiM7V7lOf8d4ZQTh4mOx753AUKUpKV6814fssw&_nc_oc=AQk4zp9tFlcnjg_o8bomCwXUJKHA6n69Lh7PG_i3gQfT7mMWeWWj6pYnsEvFkhAPcdQ&_nc_ht=scontent.fbni1-1.fna&oh=e73dd6d97e0eff5f9bc98a1684db6fe1&oe=5E0B9BB6" />
+            <Friendly name="Avid Learner😎" img="https://res.cloudinary.com/iamfredrick/image/upload/v1526148249/iamfredrick.jpg"  />
+            <Friendly name="Kelly Fredrick" img="https://scontent.fbni1-1.fna.fbcdn.net/v/t31.0-8/12973071_1615732425346841_2913213624172076477_o.jpg?_nc_cat=107&_nc_eui2=AeHk62MtzLGISFn2JGWGVIvZLqjbIgq0z75tg9CQnJ1vlsTF5uOFcYAZCiyMF5nagT4LHOLEBiM7V7lOf8d4ZQTh4mOx753AUKUpKV6814fssw&_nc_oc=AQk4zp9tFlcnjg_o8bomCwXUJKHA6n69Lh7PG_i3gQfT7mMWeWWj6pYnsEvFkhAPcdQ&_nc_ht=scontent.fbni1-1.fna&oh=e73dd6d97e0eff5f9bc98a1684db6fe1&oe=5E0B9BB6" />
+            
 
-    var styles = {
+        </div>, 
         
-        margin:25
-    }
-
-    //Like Component
-    const Like = function () {
-        return <i style={styles}className="far fa-thumbs-up"></i>
-    }
-    //share Component
-    const Share = function () {
-        return <i style={styles}className="fas fa-share-alt"></i>
-    }
-    //Add Component
-    const Add = function () {
-        return <i style={styles}className="fas fa-user-plus"></i>
-    }
-
-
-    ReactDOM.render(
-    <div>
-        <Friendly name="Avid Learner😎" img=""  />
-        <Friendly name="Kelly Fredrick" img="" />
         
-
-    </div>, 
-    
-    
-    document.getElementById("root"))
+        document.getElementById("root"))
     </script>
 </body>
 </html>
