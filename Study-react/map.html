@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--React Library-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!--React DOM Library-->
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!--Babel Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" />
+    <title>Refactoring react code</title>
+</head>
+<body>
+
+    <!--Root location container-->
+    <div id="root">React has not rendered yet!</div>
+
+    <!--Script for React-->
+    <script type="text/babel"> 
+
+        // Code goes here
+        
+        
+// store weather degrees
+
+var weather = [23,34,56,765,33,12,34,11,32,15,19]
+
+// create empty array to store weather degrees
+var goOutside = []
+
+
+//using for loop
+for (var i = 0; i < weather.length; i++ )
+{
+    if ( weather[i] > 30){
+        goOutside.push(weather[i])
+    }
+}
+
+//using filter
+
+var temp = function (temp){
+    return temp > 50;
+}
+
+var hotWeather = weather.map(temp)
+
+var coldWeather = weather.filter(function (cold) {
+    return cold < 50
+})
+
+
+console.log(goOutside)
+console.log(weather)
+console.log(hotWeather)
+console.log(coldWeather)
+
+    </script>
+</body>
+</html>
