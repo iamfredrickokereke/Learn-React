@@ -46,7 +46,7 @@ var temp = function (temp){
 
 var hotWeather = weather.map(temp)
 
-var coldWeather = weather.filter(function (cold) {
+var coldWeather = weather.map(function (cold) {
     return cold < 50
 })
 
