@@ -2,7 +2,9 @@
 
 function App() {
   return (
-    <h1>Hello</h1>
+    <div>
+      <h1>App Component!</h1>
+    </div>
   );
 }
 
