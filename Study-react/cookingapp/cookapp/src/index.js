@@ -2,19 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
 
-// import Fred from './Fred'
+import Fred from './Fred'
 
-function Bank() {
-  return (
-    <div>
-      <h1>Our new bank component!</h1>
-    </div>
-  )
-}
+// function Bank() {
+//   return (
+//     <React.Fragment>
+//       <h1>Our new bank component!</h1>
+//     </React.Fragment>
+//   )
+// }
 
 ReactDOM.render(
   <React.StrictMode>
-    <Bank />
+    <Fred />
   </React.StrictMode>,
   document.getElementById('root')
 );

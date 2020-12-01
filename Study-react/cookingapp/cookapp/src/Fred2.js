@@ -1,8 +1,10 @@
-import React from 'react';
+// import React from 'react';
 
-const AnotherBank = ()=>{
-    return React.createElement('h1', {}, 'hello!!!')
-}
+// const AnotherBank = () =>{
+//  return React.createElement('h1', {}, 'hello!!!')
+// }
 
 
-export default AnotherBank
+// export default AnotherBank
+
+
