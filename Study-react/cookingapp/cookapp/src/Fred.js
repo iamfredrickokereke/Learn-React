@@ -1,22 +1,30 @@
-
+import './index.css'
 
 function BookList() {
     return (
-        <>
+        <section className="booklist">
             <Book />
             <Book />
             <Book />
-        </>
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+        </section>
     )
 }
 
 const Book = () => {
     return (
-        <section>
+        <article className="card">
             <Image />
             <Title />
             <Author />
-        </section>
+        </article>
     )
 }
 
