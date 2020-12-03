@@ -27,7 +27,7 @@ const Book = (props) => {
     return (
         <article className="card">
             <img src={img} alt=""/>
-    <h2 style={{color:'red'}}>{title} {props.name}</h2>
+            <h2 style={{color:'red'}}>{title} {props.name}</h2>
             <h1 style={{letterSpacing:'5px'}}>{author.toLocaleUpperCase()}</h1>
 
         </article>
