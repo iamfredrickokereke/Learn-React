@@ -10,6 +10,10 @@ body{
     color: #fff;
 }
 
+img{
+    width: auto;
+    height: 100px;
+}
 
 .card{
     width: 400px;
