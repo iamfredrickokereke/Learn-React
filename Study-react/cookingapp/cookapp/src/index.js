@@ -1,24 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
-
-import Fred from './Fred'
 
 
+import './index.css'
 
-// function Bank() {
-//   return (
-//     <React.Fragment>
-//       <h1>Our new bank component!</h1>
-//     </React.Fragment>
-//   )
-// }
+function BookList() {
+    return (
+        <section className="booklist">
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+        </section>
+    )
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Fred />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Book = () => {
+    return (
+        <article className="card">
+            <Image />
+            <Title />
+            <Author />
+        </article>
+    )
+}
 
+const Image= () => {
+    return <img src="https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.png?width=300&height=315&ext=.png" alt=""/>
+}
+const Title= () => {
+    return <h2>Image - 1</h2>
+}
+const Author= () => {
+    return <h1>Written by Fredrick Achiever</h1>
+}
+
+
+ReactDOM.render(<BookList />, document.getElementById('root'))
 
