@@ -1,11 +1,8 @@
 
+const names = ['fred', 'emma', 'charles', 'miracle', 'juliet']
 
-function App() {
-  return (
-    <div>
-      <h1>App Component!</h1>
-    </div>
-  );
-}
+const newNames = names.filter((name)=>{
+  return name
+})
 
-export default App;
+console.log(newNames);

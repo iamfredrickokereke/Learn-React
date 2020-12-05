@@ -16,8 +16,7 @@ img{
 }
 
 .card{
-    width: 400px;
-    height: 200px;
+    
     border: 1px solid gainsboro;
     margin: 5px;
     padding: 15px;
@@ -25,8 +24,12 @@ img{
 }
 
 .card:hover{
-    background-color: #003;
+    
     cursor: pointer;
+}
+
+.event{
+    background-color: #003;
 }
 
 
@@ -42,5 +45,6 @@ img{
 @media screen and (min-width: 768px){
     .booklist{
         grid-template-columns: repeat(3, 1fr);
+        align-items: flex-start;
     }
 }
