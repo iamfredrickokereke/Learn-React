@@ -334,7 +334,6 @@ function LikeArea() {
       return 0;
     });
   }
-
   return (
     <>
       <button onClick={increaseLikeHandler}>Increase likes</button>
